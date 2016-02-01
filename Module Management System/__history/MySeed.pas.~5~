@@ -1,0 +1,32 @@
+unit MySeed;
+
+interface
+  uses
+    DCPCrypt2,DCPice,DCPMD5,DCPHaval;
+  function SeedEncToSHA256(key:string;word:string):String;
+  function seedDcpFromSHA256(key:string;word:string):string;
+
+implementation
+function SeedEncToSHA256(key: string; word: string):String;
+var
+  cipher:TDCP_ice;
+begin
+  cipher := TDCP_ice.Create(nil);
+  cipher.InitStr(key,TDCP_haval);
+  Result := cipher.EncryptString(word);
+  cipher.Burn;
+  cipher.Free;
+end;
+
+function seedDcpFromSHA256(key: string; word: string):String;
+var
+  cipher : TDCP_ice;
+begin
+  cipher := TDCP_ice.Create(nil);
+  cipher.InitStr(key,TDCP_haval);
+  Result := cipher.DecryptString(word);
+  cipher.Burn;
+  cipher.Free;
+end;
+
+end.

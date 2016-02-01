@@ -1,0 +1,64 @@
+unit FormParam;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    lbl1: TLabel;
+    edtParam1: TEdit;
+    Param2: TLabel;
+    edtParam2: TEdit;
+    lbl2: TLabel;
+    edtParam3: TEdit;
+    lbl3: TLabel;
+    edtParam4: TEdit;
+    lbl4: TLabel;
+    edtParam5: TEdit;
+    lbl5: TLabel;
+    edtParam6: TEdit;
+    lbl6: TLabel;
+    edt6: TEdit;
+    lbl7: TLabel;
+    edtParam8: TEdit;
+    lbl8: TLabel;
+    edt8: TEdit;
+    lbl9: TLabel;
+    edtParam10: TEdit;
+    lbl10: TLabel;
+    edtParam11: TEdit;
+    lbl11: TLabel;
+    edtParam12: TEdit;
+    lbl12: TLabel;
+    edtParam13: TEdit;
+    lbl13: TLabel;
+    edtParam14: TEdit;
+    lbl14: TLabel;
+    edtParam15: TEdit;
+    lbl15: TLabel;
+    edtParam16: TEdit;
+    lbl16: TLabel;
+    edtParam17: TEdit;
+    lbl17: TLabel;
+    edtParam18: TEdit;
+    lbl18: TLabel;
+    edtParam19: TEdit;
+    lbl19: TLabel;
+    edtParam20: TEdit;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+end.

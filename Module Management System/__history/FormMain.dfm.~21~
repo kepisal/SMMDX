@@ -1,0 +1,834 @@
+object MainForm: TMainForm
+  Left = 0
+  Top = 0
+  Anchors = [akLeft, akTop, akRight, akBottom]
+  BorderStyle = bsSingle
+  BorderWidth = 2
+  Caption = 'Module Management System'
+  ClientHeight = 524
+  ClientWidth = 724
+  Color = clWindow
+  Constraints.MaxHeight = 1080
+  Constraints.MaxWidth = 1920
+  Constraints.MinHeight = 577
+  Constraints.MinWidth = 734
+  UseDockManager = True
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  FormStyle = fsMDIForm
+  Menu = mmBar
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  ScreenSnap = True
+  Visible = True
+  WindowState = wsMaximized
+  OnCreate = FormCreate
+  OnResize = FormResize
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnlMainForm: TPanel
+    Left = 0
+    Top = 0
+    Width = 724
+    Height = 524
+    Align = alClient
+    TabOrder = 0
+    object pnlTop: TPanel
+      Left = 1
+      Top = 1
+      Width = 722
+      Height = 60
+      Align = alTop
+      Caption = 'pnlTop'
+      Constraints.MinHeight = 60
+      TabOrder = 0
+      object pnlSearch: TPanel
+        Left = 1
+        Top = 1
+        Width = 250
+        Height = 58
+        Align = alLeft
+        Caption = 'pnlSearch'
+        Color = clBtnShadow
+        Constraints.MaxWidth = 350
+        Constraints.MinWidth = 250
+        Locked = True
+        ParentBackground = False
+        ShowCaption = False
+        TabOrder = 0
+        DesignSize = (
+          250
+          58)
+        object srchModule: TSearchBox
+          Left = 25
+          Top = 14
+          Width = 200
+          Height = 30
+          Alignment = taCenter
+          Anchors = []
+          AutoSelect = False
+          BevelKind = bkFlat
+          BevelOuter = bvSpace
+          Constraints.MinHeight = 30
+          Constraints.MinWidth = 200
+          DoubleBuffered = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentDoubleBuffered = False
+          ParentFont = False
+          TabOrder = 0
+          TextHint = 'Enter module name ...'
+          ButtonWidth = 30
+        end
+      end
+      object pnlDate: TPanel
+        Left = 251
+        Top = 1
+        Width = 470
+        Height = 58
+        Align = alClient
+        Caption = 'pnlSearch'
+        Color = clBtnShadow
+        Constraints.MinWidth = 350
+        ParentBackground = False
+        ShowCaption = False
+        TabOrder = 1
+        object pnlinDateL: TPanel
+          Left = 1
+          Top = 1
+          Width = 300
+          Height = 56
+          Align = alLeft
+          BevelOuter = bvNone
+          Caption = 'pnlinDateL'
+          ShowCaption = False
+          TabOrder = 0
+          object lblTo: TLabel
+            Left = 144
+            Top = 16
+            Width = 15
+            Height = 16
+            Caption = 'To'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clCaptionText
+            Font.Height = -13
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentFont = False
+          end
+          object dtpFrom: TDateTimePicker
+            Left = 9
+            Top = 14
+            Width = 129
+            Height = 24
+            Date = 42386.934725648150000000
+            Time = 42386.934725648150000000
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 0
+          end
+          object dtpTo: TDateTimePicker
+            Left = 165
+            Top = 13
+            Width = 129
+            Height = 24
+            Date = 42386.934725648150000000
+            Time = 42386.934725648150000000
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 1
+          end
+        end
+        object pnlinDateR: TPanel
+          Left = 301
+          Top = 1
+          Width = 168
+          Height = 56
+          Align = alClient
+          BevelOuter = bvNone
+          Caption = 'pnlinDateR'
+          ShowCaption = False
+          TabOrder = 1
+          object btnStart: TButton
+            AlignWithMargins = True
+            Left = 104
+            Top = 1
+            Width = 25
+            Height = 54
+            Margins.Top = 1
+            Margins.Bottom = 1
+            Align = alRight
+            Anchors = [akLeft, akTop, akRight, akBottom]
+            Caption = 'Start'
+            Constraints.MaxWidth = 150
+            Constraints.MinWidth = 25
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 0
+            OnClick = btnStartClick
+          end
+          object btnUpdate: TButton
+            AlignWithMargins = True
+            Left = 135
+            Top = 1
+            Width = 30
+            Height = 54
+            Margins.Top = 1
+            Margins.Bottom = 1
+            Align = alRight
+            Anchors = [akLeft, akTop, akRight, akBottom]
+            Caption = 'View'
+            Constraints.MaxWidth = 150
+            Constraints.MinWidth = 30
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 1
+            OnClick = btnUpdateClick
+          end
+        end
+      end
+    end
+    object pnlWorkArea: TPanel
+      Left = 1
+      Top = 61
+      Width = 722
+      Height = 462
+      Margins.Left = 2
+      Margins.Top = 2
+      Margins.Right = 2
+      Margins.Bottom = 2
+      Align = alClient
+      Color = clBtnShadow
+      ParentBackground = False
+      TabOrder = 1
+      object lvModule: TListView
+        AlignWithMargins = True
+        Left = 4
+        Top = 6
+        Width = 714
+        Height = 433
+        Margins.Top = 5
+        Align = alClient
+        Checkboxes = True
+        Columns = <
+          item
+          end
+          item
+            Caption = 'Type'
+          end
+          item
+            Caption = 'Name'
+          end
+          item
+            Caption = 'Service'
+          end
+          item
+            Alignment = taCenter
+            Caption = 'code'
+          end
+          item
+            Caption = 'Process'
+          end
+          item
+            Alignment = taCenter
+            Caption = 'Status'
+          end
+          item
+            Caption = 'Version'
+          end>
+        DoubleBuffered = True
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        FlatScrollBars = True
+        GridLines = True
+        ReadOnly = True
+        RowSelect = True
+        ParentDoubleBuffered = False
+        ParentFont = False
+        TabOrder = 0
+        ViewStyle = vsReport
+        OnAdvancedCustomDrawSubItem = lvModuleAdvancedCustomDrawSubItem
+      end
+      object stat1: TStatusBar
+        Left = 1
+        Top = 442
+        Width = 720
+        Height = 19
+        Panels = <
+          item
+            Alignment = taRightJustify
+            Text = 'Total :'
+            Width = 50
+          end
+          item
+            Text = '0'
+            Width = 50
+          end
+          item
+            Alignment = taRightJustify
+            Text = 'Scanning :'
+            Width = 50
+          end
+          item
+            Text = '0'
+            Width = 50
+          end
+          item
+            Alignment = taRightJustify
+            Text = 'Error : '
+            Width = 50
+          end
+          item
+            Text = '0'
+            Width = 50
+          end
+          item
+            Alignment = taRightJustify
+            Text = 'Completed :'
+            Width = 50
+          end
+          item
+            Text = '0'
+            Width = 50
+          end>
+      end
+    end
+  end
+  object pnlModuelInfo: TPanel
+    Left = 0
+    Top = 0
+    Width = 724
+    Height = 524
+    Align = alClient
+    TabOrder = 1
+    object pnlLModule: TPanel
+      Left = 1
+      Top = 1
+      Width = 245
+      Height = 522
+      Align = alLeft
+      Color = clBtnShadow
+      ParentBackground = False
+      TabOrder = 0
+      object pnlLTmodule: TPanel
+        Left = 1
+        Top = 1
+        Width = 243
+        Height = 42
+        Align = alTop
+        BevelOuter = bvNone
+        TabOrder = 0
+        object srchModuleName: TSearchBox
+          AlignWithMargins = True
+          Left = 3
+          Top = 11
+          Width = 235
+          Height = 21
+          TabOrder = 0
+        end
+      end
+      object pnlLBModule: TPanel
+        Left = 1
+        Top = 43
+        Width = 243
+        Height = 478
+        Align = alClient
+        TabOrder = 1
+        object lvModuleInfo: TListView
+          AlignWithMargins = True
+          Left = 4
+          Top = 7
+          Width = 235
+          Height = 467
+          Margins.Top = 6
+          Align = alClient
+          BevelInner = bvNone
+          BevelOuter = bvNone
+          Columns = <
+            item
+              Caption = 'ID'
+            end
+            item
+              Caption = 'Name'
+            end
+            item
+              Caption = 'Type'
+            end>
+          ColumnClick = False
+          ReadOnly = True
+          RowSelect = True
+          TabOrder = 0
+          ViewStyle = vsReport
+          OnClick = lvModuleInfoClick
+        end
+      end
+    end
+    object pnlRModule: TPanel
+      Left = 246
+      Top = 1
+      Width = 477
+      Height = 522
+      Margins.Left = 6
+      Align = alClient
+      Color = clBtnShadow
+      ParentBackground = False
+      TabOrder = 1
+      object pnlRTModule: TPanel
+        AlignWithMargins = True
+        Left = 7
+        Top = 3
+        Width = 468
+        Height = 41
+        Margins.Left = 6
+        Margins.Top = 2
+        Margins.Right = 1
+        Margins.Bottom = 2
+        Align = alTop
+        Color = clWhite
+        ParentBackground = False
+        TabOrder = 0
+      end
+      object pnlRBModule: TPanel
+        AlignWithMargins = True
+        Left = 6
+        Top = 49
+        Width = 467
+        Height = 469
+        Margins.Left = 5
+        Align = alClient
+        Color = clWhite
+        ParentBackground = False
+        TabOrder = 1
+        object grpMoudleInfo: TGroupBox
+          AlignWithMargins = True
+          Left = 31
+          Top = 31
+          Width = 405
+          Height = 287
+          Margins.Left = 30
+          Margins.Top = 30
+          Margins.Right = 30
+          Margins.Bottom = 150
+          Align = alClient
+          Caption = ' Module Information : '
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 0
+          object grdpnlModule: TGridPanel
+            AlignWithMargins = True
+            Left = 42
+            Top = 58
+            Width = 321
+            Height = 173
+            Margins.Left = 40
+            Margins.Top = 40
+            Margins.Right = 40
+            Margins.Bottom = 0
+            Align = alClient
+            BevelOuter = bvNone
+            ColumnCollection = <
+              item
+                Value = 13.856799545434620000
+              end
+              item
+                Value = 86.143200454565380000
+              end>
+            ControlCollection = <
+              item
+                Column = 0
+                Control = lblName
+                Row = 0
+              end
+              item
+                Column = 1
+                Control = edtName
+                Row = 0
+              end
+              item
+                Column = 0
+                Control = lblType
+                Row = 1
+              end
+              item
+                Column = 1
+                Control = edtType
+                Row = 1
+              end
+              item
+                Column = 0
+                Control = lblService
+                Row = 2
+              end
+              item
+                Column = 1
+                Control = edtService
+                Row = 2
+              end
+              item
+                Column = 0
+                Control = lblCode
+                Row = 3
+              end
+              item
+                Column = 1
+                Control = edtCode
+                Row = 3
+              end
+              item
+                Column = 0
+                Control = lblParam
+                Row = 4
+              end
+              item
+                Column = 1
+                Control = edtParam
+                Row = 4
+              end>
+            RowCollection = <
+              item
+                SizeStyle = ssAbsolute
+                Value = 35.000000000000000000
+              end
+              item
+                SizeStyle = ssAbsolute
+                Value = 35.000000000000000000
+              end
+              item
+                SizeStyle = ssAbsolute
+                Value = 35.000000000000000000
+              end
+              item
+                SizeStyle = ssAbsolute
+                Value = 35.000000000000000000
+              end
+              item
+                SizeStyle = ssAbsolute
+                Value = 35.000000000000000000
+              end>
+            TabOrder = 0
+            DesignSize = (
+              321
+              173)
+            object lblName: TLabel
+              Left = 5
+              Top = 9
+              Width = 33
+              Height = 16
+              Anchors = [akLeft, akTop, akRight, akBottom]
+              Caption = 'Name'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Tahoma'
+              Font.Style = []
+              ParentFont = False
+            end
+            object edtName: TEdit
+              AlignWithMargins = True
+              Left = 50
+              Top = 6
+              Width = 265
+              Height = 23
+              Margins.Left = 6
+              Margins.Top = 6
+              Margins.Right = 6
+              Margins.Bottom = 6
+              Align = alClient
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Tahoma'
+              Font.Style = []
+              MaxLength = 50
+              ParentFont = False
+              TabOrder = 0
+              ExplicitHeight = 24
+            end
+            object lblType: TLabel
+              Left = 8
+              Top = 44
+              Width = 28
+              Height = 16
+              Anchors = [akLeft, akTop, akRight, akBottom]
+              BiDiMode = bdLeftToRight
+              Caption = 'Type'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Tahoma'
+              Font.Style = []
+              ParentBiDiMode = False
+              ParentFont = False
+            end
+            object edtType: TEdit
+              AlignWithMargins = True
+              Left = 50
+              Top = 41
+              Width = 265
+              Height = 23
+              Margins.Left = 6
+              Margins.Top = 6
+              Margins.Right = 6
+              Margins.Bottom = 6
+              Align = alClient
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Tahoma'
+              Font.Style = []
+              MaxLength = 50
+              ParentFont = False
+              TabOrder = 1
+              ExplicitHeight = 24
+            end
+            object lblService: TLabel
+              Left = 1
+              Top = 79
+              Width = 42
+              Height = 16
+              Anchors = [akLeft, akTop, akRight, akBottom]
+              Caption = 'Service'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Tahoma'
+              Font.Style = []
+              ParentFont = False
+            end
+            object edtService: TEdit
+              AlignWithMargins = True
+              Left = 50
+              Top = 76
+              Width = 265
+              Height = 23
+              Margins.Left = 6
+              Margins.Top = 6
+              Margins.Right = 6
+              Margins.Bottom = 6
+              Align = alClient
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Tahoma'
+              Font.Style = []
+              MaxLength = 50
+              ParentFont = False
+              TabOrder = 2
+              ExplicitHeight = 24
+            end
+            object lblCode: TLabel
+              Left = 7
+              Top = 114
+              Width = 29
+              Height = 16
+              Anchors = [akLeft, akTop, akRight, akBottom]
+              Caption = 'Code'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Tahoma'
+              Font.Style = []
+              ParentFont = False
+            end
+            object edtCode: TEdit
+              AlignWithMargins = True
+              Left = 50
+              Top = 111
+              Width = 265
+              Height = 23
+              Margins.Left = 6
+              Margins.Top = 6
+              Margins.Right = 6
+              Margins.Bottom = 6
+              Align = alClient
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Tahoma'
+              Font.Style = []
+              MaxLength = 50
+              ParentFont = False
+              TabOrder = 3
+              ExplicitHeight = 24
+            end
+            object lblParam: TLabel
+              Left = 3
+              Top = 149
+              Width = 37
+              Height = 16
+              Anchors = []
+              Caption = 'Param'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Tahoma'
+              Font.Style = []
+              ParentFont = False
+              ExplicitLeft = 8
+              ExplicitTop = 144
+            end
+            object edtParam: TEdit
+              AlignWithMargins = True
+              Left = 50
+              Top = 146
+              Width = 265
+              Height = 23
+              Margins.Left = 6
+              Margins.Top = 6
+              Margins.Right = 6
+              Margins.Bottom = 6
+              Align = alClient
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Tahoma'
+              Font.Style = []
+              MaxLength = 50
+              ParentFont = False
+              TabOrder = 4
+              OnChange = edtParamChange
+              ExplicitLeft = 49
+            end
+          end
+          object pnlRBButton: TPanel
+            AlignWithMargins = True
+            Left = 5
+            Top = 234
+            Width = 353
+            Height = 41
+            Margins.Right = 45
+            Margins.Bottom = 10
+            Align = alBottom
+            BevelOuter = bvNone
+            TabOrder = 1
+            object btnSave: TButton
+              Left = 203
+              Top = 0
+              Width = 75
+              Height = 41
+              Align = alRight
+              Caption = 'Save'
+              TabOrder = 0
+              OnClick = saveModule
+            end
+            object btnDelete: TButton
+              Left = 278
+              Top = 0
+              Width = 75
+              Height = 41
+              Align = alRight
+              Caption = 'Delete'
+              TabOrder = 1
+              OnClick = btnDeleteClick
+            end
+          end
+        end
+      end
+    end
+  end
+  object mmBar: TMainMenu
+    object Main: TMenuItem
+      Caption = 'Main'
+      OnClick = MainClick
+    end
+    object File1: TMenuItem
+      Caption = 'File'
+      object New1: TMenuItem
+        Caption = 'New'
+        OnClick = New1Click
+      end
+      object Open1: TMenuItem
+        Caption = 'Open'
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object Save1: TMenuItem
+        Caption = 'Save'
+      end
+      object N2: TMenuItem
+        Caption = '-'
+      end
+      object Close1: TMenuItem
+        Caption = 'Close'
+        Enabled = False
+      end
+    end
+    object Edit1: TMenuItem
+      Caption = 'Edit'
+      object Module1: TMenuItem
+        Caption = 'Module'
+        object Information1: TMenuItem
+          Caption = 'Information'
+        end
+      end
+    end
+    object Search1: TMenuItem
+      Caption = 'Search'
+    end
+    object View1: TMenuItem
+      Caption = 'View'
+    end
+  end
+  object trycn: TTrayIcon
+    Animate = True
+    Icon.Data = {
+      0000010001002020040000000000E80200001600000028000000200000004000
+      0000010004000000000000020000000000000000000000000000000000000000
+      000000008000008000000080800080000000800080008080000080808000C0C0
+      C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF000B31
+      11111111111000000000000000000BBB33333333311000000000000000000888
+      8B33333333100000000000000000003333333333110000000000000000000088
+      8888BBBBB1000000000000000000000033333333310004444400000000000000
+      8BBBB3B10004467676440000000000008BBBB331004767676676400000000000
+      888BB3310226767667676400000000000BBBB331027777676276740000000000
+      0BBBB3317777777222676640000000000888BB31777777722276764000000000
+      00BBBB3318777222226766400000000000BBBB33187772222226664000000000
+      00888BB31877772277222240000000000008BBB3318F77722722224000000000
+      0008BBB33187F7772222240000000000000888BB3172777222FB040000000000
+      0000BBBB33172777222FB000000000000000888B331722777724BB0000000000
+      0000088BB310022222000BB0000000000000088BB3310000000000BB00000000
+      00000088BB31000000000BBBB000000000000088BB331000000BBBBBBB700000
+      0000000BBB333100000BBBBB0000B3333333333BBB3331000000BBBB0000BB33
+      33333333BBB333000000BBBBB000BBB3333333BBBBBB330000000BBBBB008BBB
+      BBBBBBBB88BBB300000000BBBBB88B8888888888888BB300000000BBBBB08888
+      888888888888BB000000000BBB000000000000000000000000000000B0008001
+      FFFF8001FFFF8001FFFFC003FFFFC003FFFFF00383FFF00E00FFF00C007FF008
+      003FF808003FF800001FF800001FFC00001FFC00001FFC00001FFE00001FFE00
+      003FFE00003FFF00003FFF00001FFF81838FFF80FFC7FFC0FC03FFC07E01FFE0
+      3E0F00003F0700003F0300003F8100003FC000003FC100003FE3FFFFFFF7}
+    Visible = True
+    OnClick = trycnClick
+    Left = 432
+    Top = 124
+  end
+end
