@@ -45,9 +45,10 @@ const
   E_M_SITE_INTERNAL: HResult                    = HResult($80002F30);  //
   E_M_SITE_INVALID: HResult                     = HResult($80002F31);  //
 
-  E_M_USERID_NOTENTER: HResult                  = HResult($80002F32);  //
+  E_M_USERID_NOTENTER: HResult                  = HResult($80002F32);  // User ID or Password Invalid
   E_M_PASSWORD_NOTENTER: HResult                = HResult($80002F33);
-  E_M_CODE_NOTEXIST:HRESULT                     = HResult($80002F34);
+
+  E_M_CODE_NOTEXIST:HRESULT                     = HResult($80002F34);  // Module not exist
 // Set Param
 {-----Scient AXX01XX-----}
 
@@ -90,5 +91,7 @@ var
   BASEResult: TBASEParam;    // result structure
 
 implementation
+
+uses SysUtils;
 
 end.
